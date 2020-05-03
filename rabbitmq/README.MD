@@ -1,0 +1,1 @@
+# bkci rabbitmq docker images file
