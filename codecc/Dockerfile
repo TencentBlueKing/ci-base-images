@@ -1,4 +1,12 @@
 FROM centos:7
+# UnInstall subversion
+RUN yum remove -y subversion*
+# Add svn repo
+RUN echo [Subversion] >> /etc/yum.repos.d/subversion.repo
+RUN echo name=Wandisco SVN Repo >> /etc/yum.repos.d/subversion.repo
+RUN echo baseurl=http://opensource.wandisco.com/centos/\$releasever/svn-1.9/RPMS/\$basearch/ >> /etc/yum.repos.d/subversion.repo
+RUN echo enabled=1 >> /etc/yum.repos.d/subversion.repo
+RUN echo gpgcheck=0 >> /etc/yum.repos.d/subversion.repo
 # Install tools
 RUN yum update -y && \
     yum install -y kde-l10n-Chinese \
