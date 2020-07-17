@@ -16,6 +16,7 @@ RUN yum update -y && \
     yum install -y java-1.8.0-openjdk && \
     yum install -y git && \
     yum install -y subversion && \
+    yum install -y gcc && \
     yum clean all && \
     rm -rf /tmp/* rm -rf /var/cache/yum/* && \
     localedef -c -f UTF-8 -i zh_CN zh_CN.UTF-8 && \
