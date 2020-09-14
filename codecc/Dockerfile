@@ -17,6 +17,9 @@ RUN yum update -y && \
     yum install -y git && \
     yum install -y subversion && \
     yum install -y perl && \
+    yum install -y epel-release && \
+    yum install -y python-pip && \
+    yum install -y python3-pip && \
     yum clean all && \
     rm -rf /tmp/* rm -rf /var/cache/yum/* && \
     localedef -c -f UTF-8 -i zh_CN zh_CN.UTF-8 && \
