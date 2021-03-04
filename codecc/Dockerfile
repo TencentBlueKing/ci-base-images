@@ -20,6 +20,10 @@ RUN yum update -y && \
     yum install -y epel-release && \
     yum install -y python-pip && \
     yum install -y python3-pip && \
+    yum -y groupinstall "Development Tools" && \
+    yum install -y openssl-devel && \
+    yum install -y bzip2-devel && \
+    yum install -y libffi-devel && \
     yum clean all && \
     rm -rf /tmp/* rm -rf /var/cache/yum/* && \
     localedef -c -f UTF-8 -i zh_CN zh_CN.UTF-8 && \
