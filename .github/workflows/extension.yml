@@ -2,9 +2,11 @@ name: Extension
 
 on:
   push:
-    branches: [ $default-branch ]
+    branches: [ 'master' ]
+    paths:
+      - 'extension/Dockerfile'
   pull_request: 
-    branches: [ $default-branch ]
+    branches: [ 'master' ]
     paths:
       - 'extension/Dockerfile'
 
