@@ -5,10 +5,12 @@ on:
     branches: [ 'master' ]
     paths:
       - 'extension/Dockerfile'
+      - '.github/workflows/extension.yml'
   pull_request: 
     branches: [ 'master' ]
     paths:
       - 'extension/Dockerfile'
+      - '.github/workflows/extension.yml'
 
 env:
   # Use docker.io for Docker Hub if empty
