@@ -4,12 +4,12 @@ on:
   push:
     branches: [ 'master' ]
     paths:
-      - 'extension/Dockerfile'
+      - 'extension/**'
       - '.github/workflows/extension.yml'
   pull_request: 
     branches: [ 'master' ]
     paths:
-      - 'extension/Dockerfile'
+      - 'extension/**'
       - '.github/workflows/extension.yml'
 
 env:
