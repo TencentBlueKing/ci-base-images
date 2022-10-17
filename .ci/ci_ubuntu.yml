@@ -1,0 +1,34 @@
+version: v2.0
+name: CI Ubuntu PR
+on:
+  pr:
+    target-branches:
+      - master
+    paths:
+      - .ci/ci_ubuntu.yml
+      - ci-ubuntu/**
+
+variables:
+  IMAGE_URL: bkci/ci
+  IMAGE_TAG: ubuntu_test
+
+stages:
+- name: Build
+  label:
+  - Build
+  jobs:
+    build:
+      name: Build images
+      runs-on:
+        pool-name: docker
+        container:
+          image: bkci/ci:ubuntu
+      steps:
+      - checkout: self
+      - uses: DockerBuildAndPushImage@4.*
+        with:
+          imageName: ci
+          imageTag: ubuntu
+          dockerBuildDir: ./ci-ubuntu
+          dockerFilePath: ./ci-ubuntu/Dockerfile
+- template: test_stage.yml

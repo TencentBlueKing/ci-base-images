@@ -1,0 +1,20 @@
+stages:
+- name: Test
+  label:
+  - Test
+  jobs:
+    test:
+      name: Test image
+      runs-on:
+        pool-name: docker
+        container:
+          # TODO: change to bkrepo uri
+          image: bkci/ci:ubuntu
+      steps:
+      - name: "check build tools"
+        run: |
+          set -x
+          echo $PATH
+          git --version
+          python --version
+          java -version
