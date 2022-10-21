@@ -1,4 +1,4 @@
-FROM openjdk:8-jre-slim
+FROM openjdk:8u342-jdk
 
 LABEL image.authors="zanyzhao@msn.com"
 
